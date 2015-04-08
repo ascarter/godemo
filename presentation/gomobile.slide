@@ -33,7 +33,7 @@ Fast.
 
 * How is Go different?
 
-Go has types and methods but no type hierarchy.
+Go has *types* and *methods* but no type hierarchy.
 
 Type inference.
 
@@ -57,7 +57,7 @@ Excellent for:
 - Backend and middle tier services
 - Map/Reduce
 - Async workers
-- Paralell processing
+- Parallel processing
 
 * Controversial Choices
 
@@ -72,7 +72,7 @@ Lacking "modern" language innovations
 
 No formal package management (not entirely true)
 
-Go isn't doing anything really new
+Go isn't doing anything new
 
 * Tour of Go
 
@@ -81,8 +81,8 @@ Go isn't doing anything really new
 Code lives in *packages*
 *import* references other packages
 *func* defines a function or method and can return tuples
-Types include *integer*, *floating point*, *byte*, *boolean*, and *string*
-Variables have type and can be inferred
+Types include *integer*, *floating*point*, *byte*, *boolean*, and *string*
+Variables have *static*type* and can be inferred
 
 * hello.go
 
@@ -104,33 +104,100 @@ Collections include *array*, *slice*, and *map*
 
 .play closures.go
 
-Can *defer* function to be run after function complets
-Closures
+Can *defer* function to be run after function completes
+Closures as anonymous *func*
 
 * composition.go
 
 .play composition.go
 
-*Pointers* (but no arithmetic)
 Primary custom data type is *struct* and can have methods
 Named collection of method signatures is an *interface*
+*Pointers* (but no arithmetic)
 
 * interfaces.go
 
 .play interfaces.go
 
+* Concurrency
+
+Async supported by goroutine using *go*myFunc()*
+Communication between goroutines via *channel*
+
+Use *select* for receiving from multiple channels concurrently
+- Pick first channel that is ready and receive/send to it
+- If more than one ready, randomly pick
+- Block if none are ready
+
 * concurrent.go
 
 .play concurrent.go
 
-Async supported by goroutine using *go*myFunc()*
-Communication between goroutines via *channel*
+* select.go
+
+.play select.go
+
+* Standard Library
+
+Extensive support
+
+- Persistance (*database/sql*, *io*, *tar*, *zip*)
+- Cryptography (*aes*, *dsa*, *hmac*, *md5*, *rsa*, *sha*)
+- Encoding (*base64*, *json*, *xml*)
+- HTML templates
+- Net (*http*, *rpc*)
+- OS (*exec*, *signal*)
+- RegEx
+- Strings
+- Testing
+- Time
+- Unicode
+
+* Network Services
+
+Standard networks services
+
+- *net* has TCP/UDP socket server and helpers
+- *net/http* fast and complete HTTP client/server
+- Upcoming *http2* support (no code changes needed if using *net/http*)
+- Custom multiplexers can be written
+- Customizable formatters including *json* and *xml*
+
+Not necessary to use web framework - standard library very complete
 
 * webserver.go
 
 .code webserver.go
 
 * Future of Go
+
+* Go in 2015
+
+Project has moved to [[https://github.com/golang][GitHub]]
+
+Go 1.5 will be self-hosted
+
+New concurrent garbage collector (vs. mark and sweep)
+
+HTTP/2 support (using *net/http*)
+
+Details - [[https://talks.golang.org/2015/state-of-go.slide][State of Go 2015]]
+
+* Go on Mobile
+
+Mobile support is coming for Android and iOS
+
+_Android_
+- Directly build APK (*go mobile*)
+- NDK support
+- Bindings between Go and Java
+
+_iOS_
+- New *darwin/arm* build target
+- Experimental
+
+Go will be interesting on device for data processing and games
+
 
 * Useful Information
 

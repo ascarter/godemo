@@ -5,16 +5,16 @@ import (
 	"strings"
 )
 
-func parse(name string) (first, last string) {
-	parts := strings.Split(name, " ")
-	first, last = parts[0], parts[1]
+func parse(location string) (city, state string) {
+	parts := strings.Split(location, ",")
+	city, state = strings.TrimSpace(parts[0]), strings.TrimSpace(parts[1])
 	return
 }
 
 func main() {
-	names := []string{"Tim Cook", "Bill Gates", "Elon Musk"}
-	for _, name := range names {
-		first, last := parse(name)
-		fmt.Println("Hello", first, last)
+	locations := []string{"Seattle, WA", "San Francisco, CA", "Portland, OR"}
+	for _, loc := range locations {
+		city, state := parse(loc)
+		fmt.Printf("Welcome to %s in %s\n", city, state)
 	}
 }
