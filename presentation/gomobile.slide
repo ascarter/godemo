@@ -1,0 +1,148 @@
+Go for Mobile Developers
+9 Apr 2015
+
+Andrew Carter
+Flipboard
+acarter@flipboard.com
+http://ascarter.net
+@ascarter
+
+* What is Go?
+
+* Go in a Nutshell
+
+Go is for building systems.
+
+Modern take on languages like C and Java.
+
+Fast, efficient, highly scalable.
+
+Created at Google by Robert Griesemer, Rob Pike, and Ken Thompson with Russ Cox.
+
+* Goals
+
+Go built as response to frustrations with existing languages and environments.
+
+Combines ease of programming an interpreted dynamic language with efficiency and safety of statically typed compiled language.
+
+Built for networked multicore computing.
+
+Fast.
+
+[[http://talks.golang.org/2012/splash.article][Go at Google]]
+
+* How is Go different?
+
+Go has types and methods but no type hierarchy.
+
+Type inference.
+
+Naming conventions specify visibility
+
+Concurrency built into the language
+- Go routines instead of threads
+- Channels instead of shared memory
+- Influenced by Communicating Sequential Processes theory (message passing)
+
+No exceptions.
+
+No generics.
+
+Tools and style are very important.
+
+* Where to use Go?
+
+Excellent for:
+- Concurrent servers
+- Backend and middle tier services
+- Map/Reduce
+- Async workers
+- Paralell processing
+
+* Controversial Choices
+
+Missing language features
+- Generics
+- Exceptions
+- Inheritance
+
+Using case to specify visibility
+
+Lacking "modern" language innovations
+
+No formal package management (not entirely true)
+
+Go isn't doing anything really new
+
+* Tour of Go
+
+* Language
+
+Code lives in *packages*
+*import* references other packages
+*func* defines a function or method and can return tuples
+Types include *integer*, *floating point*, *byte*, *boolean*, and *string*
+Variables have type and can be inferred
+
+* hello.go
+
+.play hello.go
+
+*package*main* defines executable package
+*import* creates references to *fmt* and *time* packages in standard library
+*func*main()* is entry point for a command
+*t* and *s* infer type based on the value set
+
+* tuples.go
+
+.play tuples.go
+
+*func* can return tuples
+Collections include *array*, *slice*, and *map*
+
+* closures.go
+
+.play closures.go
+
+Can *defer* function to be run after function complets
+Closures
+
+* composition.go
+
+.play composition.go
+
+*Pointers* (but no arithmetic)
+Primary custom data type is *struct* and can have methods
+Named collection of method signatures is an *interface*
+
+* interfaces.go
+
+.play interfaces.go
+
+* concurrent.go
+
+.play concurrent.go
+
+Async supported by goroutine using *go*myFunc()*
+Communication between goroutines via *channel*
+
+* webserver.go
+
+.code webserver.go
+
+* Future of Go
+
+* Useful Information
+
+- This presentation is at [[http://github.com/ascarter/gomobile]]
+- [[http://golang.org]]
+- [[https://groups.google.com/group/golang-nuts]]
+- *#go-nuts* on irc.freenode.net
+- [[https://twitter.com/golang][@golang]] on Twitter
+- [[https://godoc.org]]
+- [[http://play.golang.org]]
+- [[http://golang-book.com]]
+- [[https://gobyexample.com]]
+- [[http://gopheracademy.com]]
+- [[http://golangweekly.com]]
+
