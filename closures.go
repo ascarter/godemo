@@ -11,5 +11,7 @@ func test() {
 }
 
 func main() {
+	fmt.Println("Starting test")
 	test()
+	fmt.Println("Finishing test")
 }

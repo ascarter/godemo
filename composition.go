@@ -7,11 +7,11 @@ type Name struct {
 	Last  string
 }
 
-func (n *Name) String() string {
-	return fmt.Sprintf("%s %s", n.First, n.Last)
+func (n *Name) Greeting() string {
+	return fmt.Sprintf("Hello %s %s!", n.First, n.Last)
 }
 
 func main() {
 	name := Name{"Tim", "Cook"}
-	fmt.Println("Hello", name.String())
+	fmt.Println(name.Greeting())
 }
