@@ -1,4 +1,4 @@
-Go for Mobile Developers
+A Tour of Go
 9 Apr 2015
 
 Andrew Carter
@@ -7,77 +7,112 @@ acarter@flipboard.com
 http://ascarter.net
 @ascarter
 
+* Why Would I Use Go?
+
+* Go for Mobile Developers
+
+Easy to learn
+
+Fast and efficient
+
+Outputs are easy to manage
+
+Excellent fit for C programmers
+
+Complements applications you build:
+
+- Tools
+- Services
+- Support components
+
 * What is Go?
 
 * Go in a Nutshell
 
-Go is for building systems.
+Go is for building systems
 
-Modern take on languages like C and Java.
+Modern take on languages like C and Java
 
-Fast, efficient, highly scalable.
+Fast, efficient, highly scalable
 
-Created at Google by Robert Griesemer, Rob Pike, and Ken Thompson with Russ Cox.
+Created at Google by Robert Griesemer, Rob Pike, and Ken Thompson with Russ Cox
 
 * Goals
 
-Go built as response to frustrations with existing languages and environments.
+Go built as response to frustrations with existing languages and environments
 
-Combines ease of programming an interpreted dynamic language with efficiency and safety of statically typed compiled language.
+Combines ease of programming an interpreted dynamic language with efficiency and safety of statically typed compiled language
 
-Built for networked multicore computing.
+Built for networked multicore computing
 
-Fast.
+Fast
 
 [[http://talks.golang.org/2012/splash.article][Go at Google]]
 
 * How is Go different?
 
-Go has *types* and *methods* but no type hierarchy.
+Go has *types* and *methods* but no type hierarchy
 
-Type inference.
+Type inference
 
 Naming conventions specify visibility
 
+* How is Go different?
+
 Concurrency built into the language
+
 - Go routines instead of threads
 - Channels instead of shared memory
 - Influenced by Communicating Sequential Processes theory (message passing)
 
-No exceptions.
+* How is Go different?
 
-No generics.
+No exceptions (but there are *panic*/*recover*)
 
-Tools and style are very important.
+No generics (but there is *interface{}*)
+
+Binaries are self-contained
+
+Tools and style are very important
 
 * Where to use Go?
 
-Excellent for:
-- Concurrent servers
-- Backend and middle tier services
-- Map/Reduce
-- Async workers
-- Parallel processing
+Concurrent servers
+Backend and middle tier services
+Map/Reduce
+Async workers
+Parallel processing
 
 * Controversial Choices
 
-Missing language features
+Missing language features:
+
 - Generics
 - Exceptions
 - Inheritance
+
+Go tool requires a *workspace*
 
 Using case to specify visibility
 
 Lacking "modern" language innovations
 
-No formal package management (not entirely true)
+No formal package management
 
-Go isn't doing anything new
+Go isn't doing anything "new"
 
 * Tour of Go
 
-* Language
+* Getting Started
 
+- [[http://tour.golang.org][A Tour of Go]]
+- [[http://golang.org/doc/code.html][How to Write Go Code]]
+- [[http://golang.org/doc/effective_go.html][Effective Go]]
+- [[http://golang.org/ref/spec][The Go Programming Language Specification]]
+
+* Basics
+
+Development is done in a *workspace*
 Code lives in *packages*
 *import* references other packages
 *func* defines a function or method and can return tuples
@@ -125,6 +160,7 @@ Async supported by goroutine using *go*myFunc()*
 Communication between goroutines via *channel*
 
 Use *select* for receiving from multiple channels concurrently
+
 - Pick first channel that is ready and receive/send to it
 - If more than one ready, randomly pick
 - Block if none are ready
@@ -163,11 +199,47 @@ Standard networks services
 - Custom multiplexers can be written
 - Customizable formatters including *json* and *xml*
 
-Not necessary to use web framework - standard library very complete
+Not necessary to use web framework (standard library very complete)
 
 * webserver.go
 
 .code webserver.go
+
+* Go in Production
+
+* Building
+
+Binaries are totally self-contained
+*scp* to a server and run it
+Cross-compile to target architectures
+
+* Operating System Platforms
+
+- Linux
+- Mac OS X
+- FreeBSD
+- Windows
+
+* Cloud Services
+
+* Hosted
+
+- [[https://cloud.google.com/appengine/docs/go/][Google AppEngine]]
+- [[https://github.com/kr/heroku-buildpack-go][Heroku Buildpack: Go]]
+
+* General Compute
+
+- [[https://cloud.google.com/compute/docs/][Google Compute Engine]]
+- [[http://aws.amazon.com/ec2/][Amazon Web Services EC2]]
+- [[https://azure.microsoft.com/en-us/][Microsoft Azure]]
+- [[http://www.rackspace.com/cloud][Rackspace]]
+
+* Cloud SDK
+
+- [[https://github.com/google/google-api-go-client][Google APIs Client Library for Go]]
+- [[https://github.com/awslabs/aws-sdk-go][AWS SDK for Go]]
+- [[https://github.com/MSOpenTech/azure-sdk-for-go][Azure SDK for Go]]
+- [[https://github.com/rackspace/gophercloud][Gophercloud: OpenStack SDK for Go]]
 
 * Future of Go
 
@@ -188,20 +260,19 @@ Details - [[https://talks.golang.org/2015/state-of-go.slide][State of Go 2015]]
 Mobile support is coming for Android and iOS
 
 _Android_
-- Directly build APK (*go mobile*)
+
+- Directly build APK (*go*mobile*)
 - NDK support
 - Bindings between Go and Java
 
 _iOS_
+
 - New *darwin/arm* build target
 - Experimental
 
-Go will be interesting on device for data processing and games
-
-
 * Useful Information
 
-- This presentation is at [[http://github.com/ascarter/gomobile]]
+- This presentation is at [[http://github.com/ascarter/godemo]]
 - [[http://golang.org]]
 - [[https://groups.google.com/group/golang-nuts]]
 - *#go-nuts* on irc.freenode.net
