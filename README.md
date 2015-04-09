@@ -17,6 +17,10 @@ Create a workspace:
 	$ export GOPATH=$HOME/go
 	$ export PATH=$PATH:$GOPATH/bin
 
+## Download Demo
+
+    $ go get -u github.com/ascarter/godemo
+    $ cd $GOPATH/src/github.com/ascarter/godemo
 
 ## Presentation
 
