@@ -110,6 +110,28 @@ Go isn't doing anything "new"
 - [[http://golang.org/doc/effective_go.html][Effective Go]]
 - [[http://golang.org/ref/spec][The Go Programming Language Specification]]
 
+* Installation
+
+Official Distributions:
+
+- [[http://golang.org/doc/install]]
+
+Mac OS X
+
+	brew install go
+
+Ubuntu
+
+	sudo apt-get install golang
+
+* Workspace
+
+Create a workspace
+
+	$ mkdir $HOME/go
+	$ export GOPATH=$HOME/go
+	$ export PATH=$PATH:$GOPATH/bin
+
 * Basics
 
 Development is done in a *workspace*

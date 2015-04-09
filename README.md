@@ -2,6 +2,22 @@
 
 A brief tour of the Go language
 
+## Getting Started
+
+Install Go:
+
+* [Binary Distribution](http://golang.org/doc/install)
+* Mac OS X: `brew install go`
+* Ubuntu: `sudo apt-get install golang`
+
+
+Create a workspace:
+
+	$ mkdir $HOME/go
+	$ export GOPATH=$HOME/go
+	$ export PATH=$PATH:$GOPATH/bin
+
+
 ## Presentation
 
 To view the presentation slides:
