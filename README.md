@@ -1,5 +1,6 @@
-# gomobile
-Demo Go REST service for mobile clients
+# godemo
+
+A brief tour of the Go language
 
 ## Presentation
 
